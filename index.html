@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+<html lang="en">
 <head>
-  <title>Radio Sign In/Out</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Radio Check In/Out</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
+
   <div class="container py-5">
+
+    <!-- Logo -->
+    <div class="text-center mb-4">
+      <img 
+        src="https://drive.google.com/uc?export=view&id=1XlKv2nROvGf7_o5DeeIbq_JyoH5vUrbf" 
+        alt="Old South Carriage Co. Logo" 
+        style="max-height: 100px; border: none; display: block; margin: 0 auto;">
+    </div>
 
 
     <!-- Card Form -->
@@ -46,6 +56,12 @@
             </select>
           </div>
 
+          <!-- Notes / Maintenance Field -->
+          <div class="mb-3">
+            <label for="notes" class="form-label">Maintenance Issues or Notes</label>
+            <textarea class="form-control" id="notes" rows="3" placeholder="Describe any damage, battery issues, etc."></textarea>
+          </div>
+
           <div id="message" class="text-danger mb-3"></div>
 
           <button type="submit" class="btn btn-primary w-100">Submit</button>
@@ -83,6 +99,7 @@
       const name = document.getElementById('name').value;
       const radioId = document.getElementById('radioId').value;
       const action = document.getElementById('action').value;
+      const notes = document.getElementById('notes').value;
 
       // Check if radio is already signed out
       const checkRes = await fetch(`${webAppUrl}?radioId=${radioId}`);
@@ -98,6 +115,7 @@
       formData.append('name', name);
       formData.append('radioId', radioId);
       formData.append('action', action);
+      formData.append('notes', notes);
 
       const response = await fetch(webAppUrl, { method: 'POST', body: formData });
 
