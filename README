@@ -24,7 +24,7 @@
   <p id="message" style="color:red;"></p>
 
   <script>
-    const webAppUrl = "YOUR_WEB_APP_URL"; // <-- Replace with your script's Web App URL
+    const webAppUrl = "oldsouth83.github.io"; // <-- Replace with your script's Web App URL
 
     document.getElementById("radioForm").addEventListener("submit", async function(event) {
       event.preventDefault();
