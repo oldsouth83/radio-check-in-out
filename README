@@ -24,7 +24,7 @@
   <p id="message" style="color:red;"></p>
 
   <script>
-    const webAppUrl = "https://script.google.com/macros/s/AKfycbx30aA-TSCF1XwccmunCmXAiSTJx9vB_tkLZ9Xeb9NzCnHYFzMVfGO7F6snwDEl3yOqMA/exec"; // <-- Replace with your script's Web App URL
+    const webAppUrl = "https://script.google.com/macros/s/AKfycbw00YjaHigBkOwJno9-yljk5CmShohxvP7ya951BxeYwX0Es-1ArGHdkTn5yV2bQG_A6A/exec"; // <-- Replace with your script's Web App URL
 
     document.getElementById("radioForm").addEventListener("submit", async function(event) {
       event.preventDefault();
